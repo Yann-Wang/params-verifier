@@ -62,3 +62,6 @@
         console.log('error: ', e);
     }
 ```
+
+### test
+- you can test this node package in [es6 development environment](https://github.com/Yann-Wang/params-verifier-demo)
