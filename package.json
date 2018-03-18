@@ -1,0 +1,38 @@
+{
+  "name": "params-verifier",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=development nyc ava --verbose --no-cache --",
+    "prepublish": "npm run build",
+    "build": "babel src -d lib/"
+  },
+  "author": "Yann-Wang",
+  "license": "MIT",
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.19.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "nyc": "^11.6.0"
+  },
+  "ava": {
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ],
+    "babel": "inherit",
+    "failFast": true,
+    "files": [
+      "test/*.test.js"
+    ],
+    "snapshotDir": "ava_snapshot/"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  }
+}
