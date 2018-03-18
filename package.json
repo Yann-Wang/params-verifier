@@ -1,7 +1,14 @@
 {
   "name": "params-verifier",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "params-verifier is a validator which can be used in controller of server or any other place.",
+  "keywords": [
+    "validate",
+    "validator",
+    "params",
+    "parameter",
+    "verify"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=development nyc ava --verbose --no-cache --",
