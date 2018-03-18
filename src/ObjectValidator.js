@@ -1,4 +1,3 @@
-import arrayForEach from './util';
 import { ParamsError } from './Err';
 import ValidatorBase from './ValidatorBase';
 import selectValidator from './selectValidator';
@@ -11,12 +10,10 @@ export default class ObjectValidator extends ValidatorBase {
         this.value = data;
         this.options = options || {};
         this.type = 'object';
-        this.fieldsName = [];
-        this.isSingleField = false;
+        this.fieldsList = {};
     }
 
     singleField(name, options) {
-        this.isSingleField = true;
         this.currentFieldInfo = this.fetchFieldInfo(name, this.value, this.type, options);
         this.validate();
     }
@@ -25,25 +22,16 @@ export default class ObjectValidator extends ValidatorBase {
         const typeValidator = selectValidator(type)(this.value[name], options);
         typeValidator.currentFieldInfo =
             this.fetchFieldInfo(name, typeValidator.value, typeValidator.type, options);
-        typeValidator.validate();
+        const isFiltered = typeValidator.validate();
+        if (isFiltered) {
+            this.fieldsList[name] = isFiltered[name];
+        }
         return this;
     }
 
     checkOptionsParamsSupport() {
         this.checkOptionsValidator();
         this.checkOptionsRequired();
-    }
-
-    whetherToValidate() {
-        const { required, value, name } = this.currentFieldInfo;
-        if (required || value !== undefined) {
-            this.startValidateProcedure();
-            if (this.isSingleField) {
-                this.recordFilteredField();
-            } else {
-                this.fieldsName.push(name);
-            }
-        }
     }
 
     startValidateProcedure() {
@@ -59,12 +47,6 @@ export default class ObjectValidator extends ValidatorBase {
     }
 
     filter() {
-        const obj = {};
-        arrayForEach(this.fieldsName, ((item) => {
-            if (this.value[item] !== undefined) {
-                obj[item] = this.value[item];
-            }
-        }));
-        return obj;
+        return this.fieldsList;
     }
 }

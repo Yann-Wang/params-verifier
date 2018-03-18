@@ -39,7 +39,7 @@ export default class ValidatorBase {
 
     validate() {
         this.checkParams();
-        this.whetherToValidate();
+        return this.whetherToValidate();
     }
 
     checkParams() {
@@ -82,11 +82,13 @@ export default class ValidatorBase {
     }
 
     whetherToValidate() {
-        const { required, value } = this.currentFieldInfo;
+        const { required, value, name } = this.currentFieldInfo;
         if (required || value !== undefined) {
             this.startValidateProcedure();
             this.recordFilteredField();
+            return { [name]: this.currentFieldInfo.value };
         }
+        return false;
     }
 
     recordFilteredField() {

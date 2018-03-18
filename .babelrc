@@ -1,8 +1,12 @@
 {
     "presets": ["env"],
+    "plugins": [
+        "transform-runtime",
+        "transform-object-rest-spread"
+    ],
     "env": {
         "development": {
             "sourceMaps": "inline"
         }
     }
-  }
+}

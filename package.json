@@ -1,6 +1,6 @@
 {
   "name": "params-verifier",
-  "version": "1.0.3",
+  "version": "1.0.13",
   "description": "params-verifier is a validator which can be used in controller of server or any other place.",
   "keywords": [
     "validate",
@@ -9,11 +9,8 @@
     "parameter",
     "verify"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Yann-Wang/params-verifier.git"
-  },
-  "main": "index.js",
+  "repository": "https://github.com/Yann-Wang/params-verifier",
+  "main": "lib/index.js",
   "scripts": {
     "test": "NODE_ENV=development nyc ava --verbose --no-cache --",
     "prepublish": "npm run build",
@@ -24,6 +21,9 @@
   "devDependencies": {
     "ava": "^0.25.0",
     "babel-cli": "^6.26.0",
+    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
     "eslint": "^4.19.0",
@@ -43,7 +43,5 @@
     ],
     "snapshotDir": "ava_snapshot/"
   },
-  "dependencies": {
-    "babel-polyfill": "^6.26.0"
-  }
+  "dependencies": {}
 }

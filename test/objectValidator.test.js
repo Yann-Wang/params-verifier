@@ -50,6 +50,9 @@ test('test object validator success', (t) => {
             });
 
         const filteredFields = validator.filter();
+        t.is(filteredFields.show_confirm_entry, true);
+        t.is(filteredFields.mobile, '13567441576');
+        t.is(filteredFields.hukou_type, 6);
         t.is(filteredFields.nickname, undefined);
         t.pass();
     } catch (e) {
