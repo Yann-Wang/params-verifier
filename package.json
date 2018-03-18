@@ -1,6 +1,6 @@
 {
   "name": "params-verifier",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "params-verifier is a validator which can be used in controller of server or any other place.",
   "keywords": [
     "validate",
@@ -9,6 +9,10 @@
     "parameter",
     "verify"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yann-Wang/params-verifier.git"
+  },
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=development nyc ava --verbose --no-cache --",

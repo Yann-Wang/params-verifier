@@ -1,3 +1,9 @@
+### params-verifier
+
+[![NPM](http://nodei.co/npm/params-verifier.png?downloads=true)](http://nodei.co/npm/params-verifier/)
+
+[![NPM version](https://img.shields.io/npm/v/params-verifier.svg)]()
+
 - params-verifier is a validator which can be used in controller of server or any other place.
 
 ### Demo
