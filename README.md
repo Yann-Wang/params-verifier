@@ -6,6 +6,21 @@
 
 - params-verifier is a validator which can be used in controller of server or any other place.
 
+### install
+
+```shell
+    npm install params-verifier --save
+```
+
+### import
+- this package is developed by es6 syntax, so we recommend to load the package as follows:
+```javascript
+    import Validator from 'params-verifier';
+```
+or you can also load like this:
+```javascript
+    const Validator = require('params-verifier').default;
+```
 ### Demo
 
 ```javascript
