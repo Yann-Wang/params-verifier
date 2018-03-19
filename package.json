@@ -1,6 +1,6 @@
 {
   "name": "params-verifier",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "params-verifier is a validator which can be used in controller of server or any other place.",
   "keywords": [
     "validate",
