@@ -1,4 +1,3 @@
-### params-verifier
 
 [![NPM](http://nodei.co/npm/params-verifier.png?downloads=true)](http://nodei.co/npm/params-verifier/)
 
