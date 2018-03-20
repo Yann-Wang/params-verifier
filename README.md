@@ -122,8 +122,8 @@ About the data validated by the validator, four basic types are be supported whi
             - **options.type**:string -- the business type, only string and number is supported.
                 | data type | business type |
                 | --------- | ------------- |
-                | string    |  ['mobile', 'id_card', 'passport', 'email', 'date'] |
-                | number    |  ['enum']  |
+                | string | ['mobile', 'id_card', 'passport', 'email', 'date'] |
+                | number | ['enum'] |
             - **options.typeErrMsg**string -- set the customed error message about business type.
             - **options.range**:array[start, end] -- only for the field of which the field type is number and the options.type is enum. The start is the minimum and the end is maximum.
             - **options.validator**function -- a lambda expression, specify the validation rule.
@@ -131,13 +131,13 @@ About the data validated by the validator, four basic types are be supported whi
             - **options.require**boolean -- when the value is true, the field is needed. The **options.require** of field method can override the options.required of validator.
             -  **options.stringNotEmpty**boolean -- only for the field of which the field type is string. When the value is true, the field value can't be an empty string.
             - the supported fields in options are different for different field type.
-            | data type  | options[field] supported |
+            | data type | options[field] supported |
             | ------------- | ------------- |
-            | string  | type, typeErrMsg, validator, validatorErrMsg, required, stringNotEmpty |
-            | number  | type, typeErrMsg, validator, validatorErrMsg, required  |
-            | boolean  | required  |
-            | date  | validator, validatorErrMsg, required  |
-            | object  | validator, validatorErrMsg, required  |
+            | string | type, typeErrMsg, validator, validatorErrMsg, required, stringNotEmpty |
+            | number | type, typeErrMsg, validator, validatorErrMsg, required |
+            | boolean | required |
+            | date | validator, validatorErrMsg, required |
+            | object | validator, validatorErrMsg, required |
 
 ### test
 - you can test this node package in [es6 development environment](https://github.com/Yann-Wang/params-verifier-demo)
