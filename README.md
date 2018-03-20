@@ -172,5 +172,20 @@ About the data validated by the validator, four basic types are be supported whi
         - fieldName:string --
         - options: an object, the detail is the same as the complex type.
 
-### test
-- you can test this node package in [es6 development environment](https://github.com/Yann-Wang/params-verifier-demo)
+
+### contributing
+- Please contribute using [Github Flow](https://guides.github.com/introduction/flow/). Create a branch, add commits, and [open a pull request](https://github.com/ethanselzer/react-hover-observer/compare/).
+- the source code is under the directory of `src`, the unit test is under the directory of `test`.
+- after the contributing, you need run the unit test. And all unit tests must be passed.
+
+##### test
+- start unit test
+
+```shell
+    npm test
+```
+
+- you can also test this node package in [es6 development environment](https://github.com/Yann-Wang/params-verifier-demo)
+
+### License
+- ISC
