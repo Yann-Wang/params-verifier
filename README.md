@@ -120,10 +120,12 @@ About the data validated by the validator, four basic types are be supported whi
         - fieldType:string -- 'string' | 'number' | 'boolean' | 'date' | 'object'
         - options: an object
             - **options.type**:string -- the business type, only string and number is supported.
-                | `data type` | `business type` |
-                | --------- | ------------- |
-                | string | `'mobile', 'id_card', 'passport', 'email', 'date'` |
-                | number | `'enum'` |
+
+            | `data type` | `business type` |
+            | --------- | ------------- |
+            | string | `'mobile', 'id_card', 'passport', 'email', 'date'` |
+            | number | `enum` |
+
             - **options.typeErrMsg**string -- set the customed error message about business type.
             - **options.range**:array[start, end] -- only for the field of which the field type is number and the options.type is enum. The start is the minimum and the end is maximum.
             - **options.validator**function -- a lambda expression, specify the validation rule.
@@ -136,7 +138,7 @@ About the data validated by the validator, four basic types are be supported whi
             | ------------- | ------------- |
             | string | `type, typeErrMsg, validator, validatorErrMsg, required, stringNotEmpty` |
             | number | `type, typeErrMsg, validator, validatorErrMsg, required` |
-            | boolean | required |
+            | boolean | `required` |
             | date | `validator, validatorErrMsg, required` |
             | object | `validator, validatorErrMsg, required` |
 
