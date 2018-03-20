@@ -177,6 +177,11 @@ About the data validated by the validator, four basic types are be supported whi
         - fieldName:string --
         - options: an object, the detail is the same as the complex type.
 
+#### filter the fields
+- for the complex type, the `filter` method will filter the fields registered with the `field` method.
+- for the basic type, the `filteredSingleField` method will filter the field registered with the `singleField` method.
+- if there is no error during the validation process, the fields whose options.required is true will be filtered.  For the fields whose options.required is false or is not defined , if the field value is not `undefined`, this field will be filtered. If the field value is `undefined`, this field will be omited.
+
 
 ### the principle of realization
 #### sequence of validation rule
