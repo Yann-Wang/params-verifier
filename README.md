@@ -144,7 +144,7 @@ About the data validated by the validator, four basic types are be supported whi
 
                 | `data type` | `business type` |
                 | --------- | ------------- |
-                | string | `'mobile', 'id_card', 'passport', 'email', 'date'` |
+                | string | `'mobile', 'id_card', 'email', 'date'` |
                 | number | `'enum'` |
 
             - **options.typeErrMsg**:string -- set the customed error message about business type.
