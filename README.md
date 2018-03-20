@@ -92,8 +92,8 @@ or you can also load like this:
         const validator = new Validator(query, 'object', { required: true });
         validator
             .singleField('query', {
-                validator: value => value.page > 9,
-                validatorErrMsg: '页码大于9'
+                validator: value => value.page >= 0,
+                validatorErrMsg: '页码大于等于0'
             });
         const result = validator.filteredSingleField();
         console.log('result: ', result);
@@ -120,14 +120,17 @@ About the data validated by the validator, four basic types are be supported whi
 
 #### start to validate data
 
+
+##### for complex type
+
 ```javascript
-    .field('mobile', 'string', {
+    validator.field('mobile', 'string', {
         type: 'mobile',
         typeErrMsg: '手机号格式错误'
     })
 ```
 
-- for complex type, we can use **field** method to load the field name, field type and options which is optional.
+- we can use **field** method to load the field name, field type and options which is optional.
     - **field**(fieldName, fieldType[, options])
         - fieldName:string --
         - fieldType:string -- 'string' | 'number' | 'boolean' | 'date' | 'object'
@@ -154,6 +157,20 @@ About the data validated by the validator, four basic types are be supported whi
                 | boolean | `required` |
                 | date | `validator, validatorErrMsg, required` |
                 | object | `validator, validatorErrMsg, required` |
+
+##### for basic type
+
+```javascript
+    validator.singleField('query', {
+        validator: value => value.page >= 0,
+        validatorErrMsg: '页码大于等于0'
+    });
+```
+
+- we can use **singleField** method to load the field name and options which is optional.
+    - **singleField**(fieldName[, options])
+        - fieldName:string --
+        - options: an object, the detail is the same as the complex type.
 
 ### test
 - you can test this node package in [es6 development environment](https://github.com/Yann-Wang/params-verifier-demo)
