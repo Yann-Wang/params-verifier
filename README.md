@@ -105,15 +105,28 @@ or you can also load like this:
 About the data validated by the validator, four basic types are be supported which include string, number, boolean and date. Besides, one complex type is supported, namely, the object type. At the meantime, the object type can also be acted as a basic type.
 
 #### create a validator
+
+```javascript
+    const validator = new Validator(query, 'object', { required: true });
+```
+
 - new Validator(data, dataType[, options])
 - params:
     - data: source data
-    - dataType: 'string' | 'number' | 'boolean' | 'date' | 'object'
+    - dataType: 'string' | 'number' | 'boolean' | 'date' | 'object', if the field is omited, the default value is 'object'.
     - options: an object, two fields can be set which are as follows.
         - **options.stringNotEmpty**:boolean -- the field value can't be an empty string when the data type is string.
         - **options.required**:boolean -- all fields are needed when the options.required is true. When the options.required is false, the field that equals to undefined will be filtered by the **filteredSingleField** or **filter** method.
 
 #### start to validate data
+
+```javascript
+    .field('mobile', 'string', {
+        type: 'mobile',
+        typeErrMsg: '手机号格式错误'
+    })
+```
+
 - for complex type, we can use **field** method to load the field name, field type and options which is optional.
     - **field**(fieldName, fieldType[, options])
         - fieldName:string --
