@@ -5,11 +5,13 @@
 
 - params-verifier is a validator which can be used in controller of server or any other place.
 
+
 ### install
 
 ```shell
     npm install params-verifier --save
 ```
+
 
 ### import
 - this package is developed by es6 syntax, so we recommend to load the package as follows:
@@ -101,8 +103,11 @@ or you can also load like this:
         console.log(e);
     }
 ```
+
+
 ### introduction
 About the data validated by the validator, four basic types are be supported which include string, number, boolean and date. Besides, one complex type is supported, namely, the object type. At the meantime, the object type can also be acted as a basic type.
+
 
 #### create a validator
 
@@ -173,10 +178,39 @@ About the data validated by the validator, four basic types are be supported whi
         - options: an object, the detail is the same as the complex type.
 
 
+### the principle of realization
+#### sequence of validation rule
+- there are five steps in sequence about the validation which is as follows. And only some of steps are required for one field type.
+
+    | `validation rules`    | string | number | boolean | date | object |
+    | --------------------- | ------ | ------ | ------- | ---- | ------ |
+    | `tryCastType`         |        |   ✔    |    ✔    |  ✔   |        |
+    | `verifyType`          |   ✔    |   ✔    |    ✔    |  ✔   |    ✔   |
+    | `checkStringNotEmpty` |   ✔    |        |         |      |        |
+    | `verifyBusinessType`  |   ✔    |   ✔    |         |      |        |
+    | `runValidator`        |   ✔    |   ✔    |         |  ✔   |    ✔   |
+- According to the table, if the `verifyType` validation fails, the other validation after it won't be executed.
+
+##### the validation of `tryCastType`
+- in this step, if the real data type is not the same as the specified data type, then the validator will try to cast the data to the specified type.
+
+    | `data type` | `cast type example` |
+    | :----------- | :----------------- |
+    | number      | `'6' -> 6` |
+    | boolean     | `'true' -> true` |
+    | date        | `'2017-04-06' -> (new Date('2017-04-06'))` |
+
+#### why there are only four basic types ?
+- these types(number, boolean, string, date) are related to the data types of relational database.
+
+
 ### contributing
 - Please contribute using [Github Flow](https://guides.github.com/introduction/flow/). Create a branch, add commits, and [open a pull request](https://github.com/ethanselzer/react-hover-observer/compare/).
 - the source code is under the directory of `src`, the unit test is under the directory of `test`.
 - after the contributing, you need run the unit test. And all unit tests must be passed.
+
+##### development
+- this node package is developed with es6 syntax, and it's compiled by babel before run `npm publish`. The compiled files is under the directory of `lib`. And the directory of `src` is omited when publishing which is added to the `.npmignore`.
 
 ##### test
 - start unit test
