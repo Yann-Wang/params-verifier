@@ -192,13 +192,25 @@ About the data validated by the validator, four basic types are be supported whi
 - According to the table, if the `verifyType` validation fails, the other validation after it won't be executed.
 
 ##### the validation of `tryCastType`
-- in this step, if the real data type is not the same as the specified data type, then the validator will try to cast the data to the specified type.
+- in this step, if the real data type is not the same as the specified data type, then the validator will try to cast the data to the specified type when the situation is as follows.
 
     | `data type` | `cast type example` |
     | :----------- | :----------------- |
     | number      | `'6' -> 6` |
-    | boolean     | `'true' -> true` |
+    | boolean     | `'true' -> true 'false' -> false` |
     | date        | `'2017-04-06' -> (new Date('2017-04-06'))` |
+
+##### the validation of `verifyType`
+- It's necessary for all types to check whether to match the specified type.
+
+##### the validation of `checkStringNotEmpty`
+- for the string type, if `options.stringNOtEmpty` is true, the validator will check whether the value is not an empty string.
+
+##### the validation of `verifyBusinessType`
+- this step is only for string and number. The `options.type` specifies a predefined validation rule. The data will be check with this validation rule.
+
+##### the validation of `runValidator`
+- in this step, data will be check with a validation rule specified by `options.validator`.
 
 #### why there are only four basic types ?
 - these types(number, boolean, string, date) are related to the data types of relational database.
