@@ -2,7 +2,8 @@
     "presets": ["env"],
     "plugins": [
         "transform-runtime",
-        "transform-object-rest-spread"
+        "transform-object-rest-spread",
+        "transform-es2015-modules-commonjs"
     ],
     "env": {
         "development": {
