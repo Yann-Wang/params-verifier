@@ -20,7 +20,7 @@
 ```
 or you can also load like this:
 ```javascript
-    const Validator = require('params-verifier').default;
+    const Validator = require('params-verifier');
 ```
 ### Demo
 

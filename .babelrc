@@ -3,7 +3,7 @@
     "plugins": [
         "transform-runtime",
         "transform-object-rest-spread",
-        "transform-es2015-modules-commonjs"
+        "add-module-exports"
     ],
     "env": {
         "development": {
