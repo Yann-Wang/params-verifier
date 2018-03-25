@@ -229,6 +229,12 @@ About the data validated by the validator, four basic types are be supported whi
 ##### development
 - this node package is developed with es6 syntax, and it's compiled by babel before run `npm publish`. The compiled files is under the directory of `lib`. And the directory of `src` is omited when publishing which is added to the `.npmignore`.
 
+##### example
+- start demo
+```shell
+    node ./example/demo.js
+```
+
 ##### test
 - start unit test
 

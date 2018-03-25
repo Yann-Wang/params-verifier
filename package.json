@@ -1,6 +1,6 @@
 {
   "name": "params-verifier",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "params-verifier is a validator which can be used in controller of server or any other place.",
   "keywords": [
     "validate",
@@ -44,5 +44,7 @@
     ],
     "snapshotDir": "ava_snapshot/"
   },
-  "dependencies": {}
+  "dependencies": {
+    "babel-runtime": "^6.26.0"
+  }
 }
